@@ -11,11 +11,12 @@ import {Route,BrowserRouter, Switch} from "react-router-dom";
 import CarsAdd from "./components/Cars/CarsAdd";
 import Insurance from "./components/Cars/Dates/insurance";
 import TechnicalVisit from "./components/Cars/Dates/technicalVisit";
-import Profile from "./components/Candidat/profile/Profile";
+import Quiz2 from "./Quiz2";
 import CandidatDashboard from "./components/Candidat/CandidatDashboard";
 import CalendarC from "./components/Candidat/dashboard/CalendarC";
 import Quiz from "./Quiz";
-import SignUppage from "./SignUppage";
+import Seance from "./components/Task/Seance";
+import AddUser from "./components/dashbord/addUser";
 import PricingC from "./components/Candidat/dashboard/PricingC";
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -32,11 +33,12 @@ const App = () => {
     <div>
       <BrowserRouter>
       <Switch>
-      <Route exact path="/SignUppage" component={SignUppage} />
+      <Route exact path="/Seance" component={Seance} />
+      <Route exact path="/addUser" component={AddUser} />
       <Route exact path="/Quiz" component={Quiz} />
       <Route exact path="/PricingC" component={PricingC} />
       <Route exact path="/CalendarC" component={CalendarC} />
-      <Route exact path="/Profile" component={Profile} />
+      <Route exact path="/Quiz2" component={Quiz2} />
       <Route exact path="/CarsAdd" component={CarsAdd} />
       <Route exact path="/Insurance" component={Insurance} />
       <Route exact path="/TechnicalVisit" component={TechnicalVisit} />

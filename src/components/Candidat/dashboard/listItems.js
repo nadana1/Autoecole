@@ -11,7 +11,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 export const mainListItems = (
   <div>
-    <ListItem button component={RouterLink} to='/Profile'>
+    <ListItem button component={RouterLink} to='/CandidatDashboard'>
       <ListItemIcon>
         <AccountBoxIcon />
       </ListItemIcon>
@@ -42,7 +42,7 @@ export const secondaryListItems = (
       </ListItemIcon>
       <ListItemText primary="Quiz 1" />
     </ListItem>
-    <ListItem button component={RouterLink} to=''>
+    <ListItem button component={RouterLink} to='/Quiz2'>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>

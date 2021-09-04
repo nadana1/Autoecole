@@ -4,7 +4,7 @@ import QuizCompound from './Compounds/QuizCompound'
 import StartCompound from './Compounds/StartCompound'
 import CandidatDashboard from './components/Candidat/CandidatDashboard';
 function Quiz () {
-  const[step,setStep]=useState(3)
+  const[step,setStep]=useState(1)
   const [score, setScore]=useState(0)
   return (
     <div>

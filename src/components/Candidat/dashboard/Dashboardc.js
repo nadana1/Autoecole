@@ -24,6 +24,7 @@ import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
 import Calendar from '../../calendrier/calendar';
+import ProfileUser from '../ProfileUser';
 
 
 const drawerWidth = 240;
@@ -135,11 +136,7 @@ export default function Dashboardc() {
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             Profile
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
+         
           <IconButton color="inherit">
               < ExitToAppIcon />
           </IconButton>
@@ -166,28 +163,14 @@ export default function Dashboardc() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            {/* Chart */}
-            <Grid item xs={12} md={8} lg={9}>
-              <Paper className={fixedHeightPaper}>
-               
-              </Paper>
-            </Grid>
-            {/* Recent Deposits */}
-            <Grid item xs={12} md={4} lg={3}>
-              <Paper className={fixedHeightPaper}>
-                
-              </Paper>
-            </Grid>
-            {/* Recent Orders */}
-            <Grid item xs={12}>
-              <Paper className={classes.paper}>
-                
-              </Paper>
-            </Grid>
-          </Grid>
-          <Box pt={4}>
             
-          </Box>
+            <Grid item xs={12} md={12} lg={12}>
+              <Paper >
+              <ProfileUser />
+              </Paper>
+            </Grid>
+            
+            </Grid>  
         </Container>
       </main>
     </div>

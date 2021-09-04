@@ -3,9 +3,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -14,6 +11,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import image from './backphoto.jpg'
 import { Link as RouterLink } from 'react-router-dom';
+import axios from "axios";
+import { useState } from "react";
+import { useForm } from 'react-cool-form';
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
@@ -35,8 +36,34 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-export default function CarsAdd() {
+export default function CarsAdd(props) {
     const classes = useStyles();
+  const [carcolor, setCarcolor] = useState("");
+  const [registrationNb, setRegistrationNb] = useState("");
+  const [brand, setBrand] = useState("");
+  const [model, setModel] = useState("");
+
+  /**************/
+  const { reset } = useForm();
+  function onCreatePost(e) {
+    
+    
+    e.preventDefault();
+    const postData = {
+      carcolor,
+      registrationNb,
+      brand,
+      model,
+    };
+    axios
+      .post(`http://localhost:8000/car/addcar`, postData)
+      .then((response) => {
+        console.log(response);
+      }
+      
+      );
+      reset({});
+  }
   
     return (
       <div style={{ 
@@ -60,18 +87,22 @@ export default function CarsAdd() {
           <Typography component="h1" variant="h5">
             Add New Car
           </Typography>
-          <form className={classes.form} noValidate>
+          <form type="submit"  onSubmit={onCreatePost}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="plaque"
-                  name="plaque"
+                  name="registrationNb"
                   variant="outlined"
+                  placeholder=""
                   required
                   fullWidth
-                  id="plaque"
+                  id="registrationNb"
                   label="Plaque"
-                  autoFocuss
+                  type="text"
+                value={registrationNb}
+                onChange={(e) => setRegistrationNb(e.target.value)}
+                autoFocuss
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -79,10 +110,13 @@ export default function CarsAdd() {
                   variant="outlined"
                   required
                   fullWidth
-                  id="mark"
-                  label="Mark"
-                  name="mark"
+                  id="brand"
+                  label="Brand"
+                  name="brand"
                   autoComplete="mark"
+                  type="text"
+                  value={brand}
+                  onChange={(e) => setBrand(e.target.value)}
                 />
               </Grid>
              
@@ -96,6 +130,9 @@ export default function CarsAdd() {
                   label="Model"
                   name="model"
                   autoComplete="model"
+                  type="text"
+                  value={model}
+                  onChange={(e) => setModel(e.target.value)}
                 />
               </Grid>
               
@@ -104,10 +141,13 @@ export default function CarsAdd() {
                   variant="outlined"
                   required
                   fullWidth
-                  id="color"
+                  id="carcolor"
                   label="Color"
-                  name="color"
+                  name="carcolor"
                   autoComplete="color"
+                  type="text"
+                  value={carcolor}
+                  onChange={(e) => setCarcolor(e.target.value)}
                 />
               </Grid>
              
@@ -121,7 +161,7 @@ export default function CarsAdd() {
               fullWidth
               variant="contained"
               color="primary"
-              className={classes.submit}
+              
             >
               Add
             </Button>

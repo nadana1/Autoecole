@@ -133,13 +133,10 @@ export default function CalendarC() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            Profile
+            Calendar
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
+          
+            
           <IconButton color="inherit">
               < ExitToAppIcon />
           </IconButton>

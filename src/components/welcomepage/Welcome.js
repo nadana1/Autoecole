@@ -8,6 +8,7 @@ import { Gallery } from "./gallery";
 import { Testimonials } from "./testimonials";
 import { Contact } from "./contact";
 import "../../App.css";
+import { Team } from './Team';
 import Pricing from "./Pricing.js"
 import JsonData from "../../welcomepage/data/data.json";
 function Welcome({setPrice} ) {
@@ -25,6 +26,7 @@ function Welcome({setPrice} ) {
      <Gallery />
      <Pricing setPrice={setPrice} />
     <Testimonials data={landingPageData.Testimonials} />
+    <Team data={landingPageData.Team}/>
     <Contact data={landingPageData.Contact} />
       
         </div>

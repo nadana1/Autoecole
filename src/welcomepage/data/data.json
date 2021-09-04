@@ -107,6 +107,25 @@
       "title": "The Candidates",
       "text": "Candidates have an account on the platform. They can consult their account, their planning, their follow-up and be alerted in real time of their progress."
     }
+  ],
+  "Team": [
+    {
+      "img": "img/team/nour.png",
+      "name": "Nour Chakroun"
+  
+    },
+    {
+      "img": "img/team/nada.png",
+      "name": "Nada Akkari"
+     
+    },
+    {
+      "img": "img/team/fatma.png",
+      "name": "Fatma Jallouli"
+     
+    }
   ]
+
+
 }
  

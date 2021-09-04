@@ -12,7 +12,9 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import image from './imageback.jpg'
+import image from './imageback.jpg';
+import axios from "axios";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -34,8 +36,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Seance() {
+export default function Seance(props) {
   const classes = useStyles();
+  const [type, setType] = useState("");
+  const [date, setDate] = useState("");
+  const [startTime, setStartTime] = useState("");
+  const [monitorCin, setMonitorCin] = useState("");
+  const [duration, setDuration] = useState("");
 
   return (
     <div style={{ 
@@ -85,7 +92,7 @@ export default function Seance() {
               />
             </Grid>
            <Grid item xs={12} sm={6}>
-            <h2>Date and time Set </h2>
+            <h3>Date and time Set </h3>
             </Grid>
             
             <Grid item xs={12}>

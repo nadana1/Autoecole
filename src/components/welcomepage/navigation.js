@@ -10,11 +10,12 @@ export const Navigation = (props) => {
     
          
       <div className='row'>
-    <div className="col-xs-3 col-md-3 col-xl-3">  
+    <div className="col-xs-2 col-md-2 col-xl-2">  
     <a href="#" className='page-scroll'>
-            <img id="logo-img"    src="/img/logoE.png"alt=""></img>
-     </a></div>
-     <div className="col-xs-9 col-md-9 col-xl-9">
+            <img id="logo-img" width="10%"    src="/img/logoE.png"alt=""></img>
+     </a>
+   </div>
+     <div className="col-xs-10 col-md-10 col-xl-10">
         <button
           type='button'
           className='navbar-toggle collapsed'
@@ -69,6 +70,11 @@ export const Navigation = (props) => {
           <li>
             <a href='#testimonials' className='page-scroll'>
               Testimonials
+            </a>
+          </li>
+          <li>
+            <a href='#team' className='page-scroll'>
+             Team
             </a>
           </li>
           <li>

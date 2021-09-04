@@ -129,13 +129,9 @@ export default function PricingC() {
             <MenuIcon />
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-            Profile
+            Pricing
           </Typography>
-          <IconButton color="inherit">
-            <Badge badgeContent={4} color="secondary">
-              <NotificationsIcon />
-            </Badge>
-          </IconButton>
+          
           <IconButton color="inherit">
               < ExitToAppIcon />
           </IconButton>

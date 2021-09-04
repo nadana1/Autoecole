@@ -37,11 +37,11 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Payments" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component={RouterLink} to='/addUser'>
       <ListItemIcon>
         <LayersIcon />
       </ListItemIcon>
-      <ListItemText primary="" />
+      <ListItemText primary="Add user" />
     </ListItem>
   </div>
 );
