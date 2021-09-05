@@ -112,7 +112,7 @@ const exams = [
   },]
  
  
-export default function Pricing({setPrice, setPack}) {
+export default function PricingProfile({setPrice, setPack}) {
   const classes = useStyles();
   let history= useHistory();
   return (
@@ -231,7 +231,7 @@ export default function Pricing({setPrice, setPack}) {
                 <CardActions>
                   <Button fullWidth variant={exam.buttonVariant} color="primary"
                   
-                  onClick={() => {history.push("/Checkout") ;setPrice(exam.price); setPack(exam.label)} }>
+                  onClick={() => {history.push("/Checkout") ; setPrice(exam.price); setPack(exam.label)} }>
                     {exam.buttonText}
                   </Button>
                 </CardActions>

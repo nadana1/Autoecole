@@ -12,7 +12,7 @@ export const Navigation = (props) => {
       <div className='row'>
     <div className="col-xs-2 col-md-2 col-xl-2">  
     <a href="#" className='page-scroll'>
-            <img id="logo-img" width="10%"    src="/img/logoE.png"alt=""></img>
+            <img id="logo-img"  src="/img/logoE.png"alt=""></img>
      </a>
    </div>
      <div className="col-xs-10 col-md-10 col-xl-10">

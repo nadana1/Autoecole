@@ -42,6 +42,9 @@ export default function CarsAdd(props) {
   const [registrationNb, setRegistrationNb] = useState("");
   const [brand, setBrand] = useState("");
   const [model, setModel] = useState("");
+  const [technical_visit_date, setTechnical_visit_date] = useState("");
+  const [insurance_date, setInsurance_date] = useState("");
+
 
   /**************/
   const { reset } = useForm();
@@ -54,6 +57,8 @@ export default function CarsAdd(props) {
       registrationNb,
       brand,
       model,
+      technical_visit_date,
+      insurance_date,
     };
     axios
       .post(`http://localhost:8000/car/addcar`, postData)
@@ -148,6 +153,36 @@ export default function CarsAdd(props) {
                   type="text"
                   value={carcolor}
                   onChange={(e) => setCarcolor(e.target.value)}
+                />
+              </Grid>
+             
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="insurance_date"
+                  label="Insurance Date"
+                  name="insurance_date"
+                  autoComplete="model"
+                  type="date"
+                  value={insurance_date}
+                  onChange={(e) => setInsurance_date(e.target.value)}
+                />
+              </Grid>
+              
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  variant="outlined"
+                  required
+                  fullWidth
+                  id="technical_visit_date"
+                  label="Technical visit date"
+                  name="technical_visit_date"
+                  autoComplete="technical_visit_date"
+                  type="date"
+                  value={technical_visit_date}
+                  onChange={(e) => setTechnical_visit_date(e.target.value)}
                 />
               </Grid>
              

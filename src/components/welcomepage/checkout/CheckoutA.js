@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
 
-export default function Checkout() {
+export default function CheckoutA() {
 const[school,setSchool]=useState('');
 const[fname,setFname]=useState('');
 const[lname,setLname]=useState('');
@@ -89,7 +89,7 @@ function getStepContent(step) {
   }
 }
   const handleNext = () => {
-    {activeStep === steps.length - 1?(history.push("/")):(setActiveStep(activeStep + 1)) }
+    {activeStep === steps.length - 1?(history.push("/DashbordGestion")):(setActiveStep(activeStep + 1)) }
     
   };
 

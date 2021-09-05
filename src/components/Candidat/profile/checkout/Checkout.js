@@ -89,7 +89,7 @@ function getStepContent(step) {
   }
 }
   const handleNext = () => {
-    {activeStep === steps.length - 1?(history.push("/")):(setActiveStep(activeStep + 1)) }
+    {activeStep === steps.length - 1?(history.push("/CandidatDashboard")):(setActiveStep(activeStep + 1)) }
     
   };
 

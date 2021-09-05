@@ -96,19 +96,6 @@ export default function TechnicalVisit() {
               </Grid>
              
               
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="hour"
-                 
-                  name="hour"
-                  autoComplete="hour"
-                  type="time"
-                />
-                <label>Technical viste Hour </label>
-              </Grid>
              
               
              

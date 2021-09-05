@@ -132,7 +132,7 @@ export default function SignUp({price}  ) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={() => {history.push("/Checkout")}}
+            onClick={() => {history.push("/CheckoutA")}}
 
           >
             Sign Up
