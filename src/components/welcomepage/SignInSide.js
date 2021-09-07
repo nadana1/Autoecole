@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -13,7 +14,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { useHistory } from "react-router-dom";
-
+import axios from "axios";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,6 +51,28 @@ const useStyles = makeStyles((theme) => ({
 export default function SignInSide() {
   let history= useHistory();
   const classes = useStyles();
+  const [username, setUsername] = useState("");
+
+  const [password, setPassword] = useState("");
+  
+ 
+ 
+  function onCreatePost(e) {
+    
+    e.preventDefault();
+    const postData = {
+      username,
+      password,
+      
+    };
+    axios
+      .post(`http://localhost:8000/user/login`, postData)
+      .then((response) => {
+        alert('hi');
+        console.log(response);
+      });
+  }
+
 
   return (
     
@@ -65,7 +89,7 @@ export default function SignInSide() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} type="submit" onSubmit={onCreatePost}>
             
              <TextField
               variant="outlined"
@@ -73,10 +97,12 @@ export default function SignInSide() {
               required
               Number
               fullWidth
-              id="userID"
-              label="User ID"
-              name="identifiant"
-              autoComplete="number"
+              id="username"
+              label="User Name"
+              name="username"
+              type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               autoFocus
             />
             <TextField
@@ -86,7 +112,9 @@ export default function SignInSide() {
               fullWidth
               name="password"
               label="Password"
-              type="password"
+              type="text"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               id="password"
               autoComplete="current-password"
             />
@@ -95,6 +123,7 @@ export default function SignInSide() {
               label="Remember me"
             />
             <Button
+
               type="submit"
               fullWidth
               variant="contained"
@@ -119,3 +148,5 @@ export default function SignInSide() {
     </Grid>
   );
 }
+
+

@@ -8,7 +8,7 @@ import "../../../App.css";
 
 import { useState } from "react";
 
-class PostList extends Component {
+class EmployeesTable extends Component {
   constructor(props){
     super(props)
     this.state={
@@ -19,7 +19,7 @@ class PostList extends Component {
     componentDidMount()
   {
     //alert("a7ayt")
-    axios.get('http://localhost:8000/car')
+    axios.get('http://localhost:8000/user')
     .then(response => {
       console.log(response)
       this.setState({posts: response.data})
@@ -35,18 +35,20 @@ class PostList extends Component {
     renderTableData() {
 
       return this.state.posts.map((post, index) => {
-         const { id, carcolor, registrationNb, brand,model, technical_visit_date,insurance_date } = post //destructuring
+         const { cin, email, role, lastName,firstName, birthdate,phoneNumber,adress } = post //destructuring
+         if (role==2) 
          return (
            
            
-            <tr key={id}>
+            <tr key={cin}>
                
-               <td>{carcolor}</td>
-               <td>{registrationNb}</td>
-               <td>{brand}</td>
-               <td>{model}</td>
-               <td>{technical_visit_date}</td>
-               <td>{insurance_date}</td>
+               <td>{cin}</td>
+               <td>{firstName}</td>
+               <td>{lastName}</td>
+               <td>{email}</td>
+               <td>{birthdate}</td>
+               <td>{phoneNumber}</td>
+               <td>{adress}</td>
                
             </tr>
             
@@ -60,19 +62,20 @@ class PostList extends Component {
       
        <div>
           <br/>
-          <h1 id='title'>Cars Table</h1>
+          <h1 id='title'>Employees Table</h1>
           <br/>
           <br/>
           <br/>
           <table id='students'>
              <tbody>
              <tr>
-             <th>carcolor</th>
-               <th>registrationNb</th>
-               <th>brand</th>
-               <th>model</th>
-               <th>technical_visit_date</th>
-               <th>insurance_date</th>
+             <th>cin</th>
+               <th>firstName</th>
+               <th>lastName</th>
+               <th>email</th>
+               <th>birthdate</th>
+               <th>phoneNumber</th>
+               <th>adress</th>
            </tr>
                 {this.renderTableData()}
              </tbody>
@@ -80,7 +83,7 @@ class PostList extends Component {
        </div>
     )}
 }
-export default PostList
+export default EmployeesTable
 
 
 

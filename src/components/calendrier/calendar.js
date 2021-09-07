@@ -129,7 +129,8 @@ export default function Calendar() {
       
         plugins={[ dayGridPlugin ,timeGridPlugin ,resourceTimelinePlugin ]}
         initialView="dayGridMonth"
-        events="/events.json"
+        events="./events.json"
+        resources="./events.json"
         customButtons={{
           myTimeDayBtn: {
             text: "timeDay",

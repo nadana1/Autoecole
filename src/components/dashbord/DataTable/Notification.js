@@ -34,8 +34,30 @@ class PostList extends Component {
 
     renderTableData() {
 
-      return this.state.posts.map((post, index) => {
+        var one_day = 1000 * 60 * 60 * 24
+  
+        // To set present_dates to two variables
+        var present_date = new Date();
+          
+        // 0-11 is Month in JavaScript
+       
+
+        return this.state.posts.map((post, index) => {
          const { id, carcolor, registrationNb, brand,model, technical_visit_date,insurance_date } = post //destructuring
+         var other_date = new Date (technical_visit_date);
+         var insdate = new Date (insurance_date);
+          
+         // To Calculate next year's Christmas if passed already.
+         
+           
+         // To Calculate the result in milliseconds and then converting into days
+         var Result = ( present_date.getTime() - other_date.getTime()) / (one_day)+1;
+         var Resultins = ( present_date.getTime() - insdate.getTime()) / (one_day)+1;
+           
+         // To remove the decimals from the (Result) resulting days value
+         var Final_Result = Result.toFixed(0);
+         var Final_Resultins = Resultins.toFixed(0);
+         if ((Final_Result>=0 && Final_Result<=3) || (Final_Resultins>=0 && Final_Resultins<=3))
          return (
            
            
@@ -55,12 +77,17 @@ class PostList extends Component {
    }
 
    
+   
+   
+   
+   
+   
    render() {
     return (
       
        <div>
           <br/>
-          <h1 id='title'>Cars Table</h1>
+          <h1 id='title'>close dates</h1>
           <br/>
           <br/>
           <br/>

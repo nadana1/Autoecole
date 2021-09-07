@@ -214,7 +214,8 @@ export default function SignUp(props) {
                 autoComplete="current-password"
               />
             </Grid>
-            <Grid item xs={12}>
+           {/*
+           <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
@@ -226,24 +227,24 @@ export default function SignUp(props) {
                 onChange={(e) => setRole(e.target.value)}
                 id="role"
               />
-            </Grid>
-            {/*
+            </Grid>*/}
+            
             <Grid item xs={12} sm={12}>
               <input 
               type="radio" 
               name="type"
-              type="number"
-              value= {role}
+              value="2"
+              
               onChange={(e) => setRole(e.target.value)} />  Employee
-              <input type="radio" type="number"
-              value= {role}
+              <input type="radio" value="3"
+              
               onChange={(e) => setRole(e.target.value)}  />  Candidate
-              <input type="radio" type="number"
-              value= {role}
-              onChange={(e) => setRole(e.target.value)}  />  Monitor
+              <input type="radio" value="1"
+              
+              onChange={(e) => setRole(e.target.value)}  />  Admin
             
             </Grid>
-           */}
+           
           
           <Button type="submit" fullWidth variant="contained" color="primary">
             Sign Up

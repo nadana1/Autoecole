@@ -1,9 +1,9 @@
-
+import React from 'react'; 
 import { Button, Container, Row, Col } from "reactstrap";
 
 const UserHeader = () => {
   return (
-    <>
+    <div>
       <div
         className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
         style={{
@@ -31,7 +31,7 @@ const UserHeader = () => {
           </Row>
         </Container>
       </div>
-    </>
+    </div>
   );
 };
 

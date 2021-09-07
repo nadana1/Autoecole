@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import React from 'react'
 import {
   Button,
   Card,
@@ -31,7 +32,8 @@ const Profile = () => {
   
  
   return (
-    <>
+   <div>
+   
       <UserHeader />
       {/* Page content */}
       <Container className="mt--7" fluid>
@@ -319,7 +321,8 @@ const Profile = () => {
           </Col>
         </Row>
       </Container>
-    </>
+      </div>
+   
   );
 };
 

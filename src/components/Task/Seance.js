@@ -36,13 +36,41 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Seance(props) {
+export default function Session(props) {
+  
+
+
   const classes = useStyles();
   const [type, setType] = useState("");
   const [date, setDate] = useState("");
   const [startTime, setStartTime] = useState("");
   const [monitorCin, setMonitorCin] = useState("");
   const [duration, setDuration] = useState("");
+  const [carId, setCarId] = useState("");
+  const [userCin, setUserCin] = useState("");
+  
+  
+  /**************/
+  function onCreatePost(e) {
+    
+    e.preventDefault();
+    const postData = {
+      type,
+      date,
+      startTime,
+      monitorCin,
+      duration,
+      carId,
+      userCin,
+      
+    };
+    axios
+      .post(`http://localhost:8000/session/addsession`, postData)
+      .then((response) => {
+        console.log(response);
+      });
+  }
+  
 
   return (
     <div style={{ 
@@ -64,19 +92,22 @@ export default function Seance(props) {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Seance
+          Session
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form} type="submit" onSubmit={onCreatePost}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="Cincondidat"
-                name="cinCondidat"
+                name="userCin"
                 variant="outlined"
                 required
                 fullWidth
-                id="cinCondidat"
+                id="userCin"
                 label="Student's CIN number"
+                type="text"
+                value={userCin}
+                onChange={(e) => setUserCin(e.target.value)}
                 autoFocuss
               />
             </Grid>
@@ -85,9 +116,12 @@ export default function Seance(props) {
                 variant="outlined"
                 required
                 fullWidth
-                id="cinMonitor"
+                id="monitorCin"
                 label="Monitor's CIN number"
-                name="cinMonitor"
+                name="monitorCin"
+                type="text"
+                value={monitorCin}
+                onChange={(e) => setMonitorCin(e.target.value)}
                 autoComplete="cinMonitor"
               />
             </Grid>
@@ -102,27 +136,45 @@ export default function Seance(props) {
                 type="date"
                 required
                 fullWidth
-                id="dateS"
-                
-                name="dateS"
-                autoComplete="dateS"
+                id="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                name="date"
+                autoComplete="date"
+              />
+              <Grid/>
+            
+            
+            </Grid>
+            <Grid item xs={12}>
+        
+              <TextField
+                variant="outlined"
+                type="time"
+                required
+                fullWidth
+                id="startTime"
+                value={startTime}
+                onChange={(e) => setStartTime(e.target.value)}
+                name="startTime"
+                autoComplete="startTime"
               />
               <Grid/>
             
             
             </Grid>
             
-          <h3>Hour:</h3>  
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                name="Hour"
-                label=""
-                type="time"
-                id="hour"
-                
+                name="duration"
+                label="Duration"
+                type="number"
+                value={duration}
+                onChange={(e) => setDuration(e.target.value)}
+                id="duration"
               />
             </Grid>
             
@@ -130,8 +182,8 @@ export default function Seance(props) {
               
             
             <Grid item xs={12} sm={6}>
-              <input type="radio" value="Conduit" name="type" /> Conduit
-              <input type="radio" value="Code" name="type" /> Code
+              <input type="radio" value="1" onChange={(e) => setType(e.target.value)} name="type" /> Conduit
+              <input type="radio" value="2" onChange={(e) => setType(e.target.value)} name="type" /> Code
             </Grid>
             
             

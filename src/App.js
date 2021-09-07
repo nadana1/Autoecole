@@ -20,7 +20,9 @@ import Checkout from "./components/Candidat/profile/checkout/Checkout"
 import Seance from "./components/Task/Seance";
 import AddUser from "./components/dashbord/addUser";
 import PricingC from "./components/Candidat/dashboard/PricingC";
-import UserTable from "./components/dashbord/DataTable/UserTable";
+import CandidatesTable from "./components/dashbord/DataTable/Candidates";
+import EmployeesTable from "./components/dashbord/DataTable/EmployeesTable";
+import Notification from "./components/dashbord/DataTable/Notification";
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
   speedAsDuration: true,
@@ -36,7 +38,9 @@ const App = () => {
     <div>
       <BrowserRouter>
       <Switch>
-      <Route exact path="/UserTable" component={UserTable} />
+      <Route exact path="/Notification" component={Notification} />
+      <Route exact path="/EmployeesTable" component={EmployeesTable} />
+      <Route exact path="/CandidatesTable" component={CandidatesTable} />
       <Route exact path="/CarTable" component={CarTable} />
       <Route exact path="/Seance" component={Seance} />
       <Route exact path="/addUser" component={AddUser} />
